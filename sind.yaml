@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sind1-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sind1
+  template:
+    metadata:
+      labels:
+        app: sind1
+    spec:
+      containers:
+      - name: sind1
+        image: intern/rich:latest
+        ports:
+        - containerPort: 8080
