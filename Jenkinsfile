@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Checkout code from Git repository
-                git branch: 'master', changelog: false, poll: false, url: 'https://github.com/alfatmi1993/Intern.git'
+                git url: 'https://github.com/alfatmi1993/Intern.git', credentialsId: 'f8d0256c-143b-4393-9ac5-7651d8bc82c9'
                 // Build the application (replace with your build commands)
                 sh 'mvn clean package'
             }
